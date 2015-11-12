@@ -24,7 +24,7 @@ if [ "$1" = 'postgres' ]; then
                         authMethod=md5
                 else
                         # The - option suppresses leading tabs but *not* spaces. :)
-                        cat >&2 <<-`EOWARN'
+                        cat >&2 <<-'EOWARN'
                                 ****************************************************
                                 WARNING: No password has been set for the database.
                                          This will allow anyone with access to the
