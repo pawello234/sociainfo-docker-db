@@ -95,6 +95,7 @@ if [ "$1" = 'postgres' ]; then
 	        -w start
 	echo 'Executing gosu postgres.'
         psql --username postgres -c 'CREATE DATABASE "sociainfo"' || true
+        psql --username postgres -c 'CREATE DATABASE "sociainfo_backup"' || true
 	gosu postgres pg_ctl -D "$PGDATA" -m fast -w stop
 
 	exec gosu postgres "$@"
